@@ -1,0 +1,1071 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NOVA | Luxury Stay & Dining</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #10100f;
+  --surface: #191917;
+  --gold: #c9a66b;
+  --gold-light: #e6ca91;
+  --white: #f7f4ed;
+  --muted: #aaa69c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  width: min(1180px, 90%);
+  margin: auto;
+}
+
+.section {
+  padding: 100px 0;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-heading p {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+.section-heading h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 500;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: #171510;
+  padding: 15px 26px;
+  font-weight: 700;
+  transition: .3s ease;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px #c9a66b25;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: #171510;
+}
+
+/* NAVIGATION */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  border-bottom: 1px solid #ffffff20;
+}
+
+.navbar {
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  letter-spacing: 5px;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #eee;
+  font-size: 13px;
+  transition: .3s;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background:
+    linear-gradient(90deg, #090908e8 0%, #09090880 55%, #09090825 100%),
+    url("https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=2000&q=90")
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 750px;
+  padding-top: 75px;
+  animation: appear 1.2s ease;
+}
+
+.hero-tag {
+  color: var(--gold-light);
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 12px;
+  margin-bottom: 25px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(55px, 9vw, 105px);
+  line-height: 1.02;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.hero h1 span {
+  color: var(--gold);
+  font-style: italic;
+}
+
+.hero p {
+  color: #ddd8cf;
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 35px;
+}
+
+/* ABOUT */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+}
+
+.intro-image {
+  height: 520px;
+  background: url("https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1100&q=85") center/cover;
+  transition: .5s;
+}
+
+.intro-image:hover {
+  transform: scale(1.015);
+}
+
+.intro-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(35px, 5vw, 55px);
+  font-weight: 500;
+  margin: 18px 0;
+}
+
+.intro-text p {
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+.small-label {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+/* ROOMS */
+
+.rooms {
+  background: #151513;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.room-card {
+  background: var(--surface);
+  border: 1px solid #ffffff12;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.room-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--gold);
+  box-shadow: 0 20px 45px #0007;
+}
+
+.room-image {
+  height: 260px;
+  overflow: hidden;
+}
+
+.room-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .6s;
+}
+
+.room-card:hover img {
+  transform: scale(1.08);
+}
+
+.room-info {
+  padding: 25px;
+}
+
+.room-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  margin-bottom: 12px;
+}
+
+.room-info p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.room-info .btn {
+  width: 100%;
+  text-align: center;
+}
+
+/* FEATURES */
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 65px;
+}
+
+.feature {
+  text-align: center;
+  padding: 25px 12px;
+  border: 1px solid #ffffff12;
+  transition: .3s;
+}
+
+.feature:hover {
+  border-color: var(--gold);
+  transform: translateY(-5px);
+}
+
+.feature .symbol {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.feature p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* BOOKING */
+
+.booking-section {
+  background:
+    linear-gradient(#10100fe8, #10100fe8),
+    url("https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1800&q=85") center/cover fixed;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.booking-copy h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px, 5vw, 60px);
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.booking-copy p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.booking-form {
+  background: #1a1a18f5;
+  padding: 35px;
+  border: 1px solid #c9a66b50;
+  box-shadow: 0 25px 70px #0007;
+}
+
+.booking-form h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 29px;
+  margin-bottom: 25px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 12px;
+  color: var(--gold-light);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 14px;
+  background: #10100f;
+  border: 1px solid #ffffff25;
+  color: white;
+  outline: none;
+  transition: .3s;
+  border-radius: 2px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px #c9a66b18;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #858178;
+}
+
+.form-group select option {
+  background: #191917;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 105px;
+}
+
+.booking-form .btn {
+  width: 100%;
+  margin-top: 22px;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 11px;
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.6;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-rows: 230px 230px;
+  gap: 15px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery-item:first-child {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .6s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(.75);
+}
+
+/* CONTACT */
+
+.contact {
+  background: #191917;
+  text-align: center;
+}
+
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(35px, 5vw, 55px);
+  margin: 18px 0;
+}
+
+.contact p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.contact-number {
+  color: var(--gold-light) !important;
+  font-size: 20px;
+  margin-bottom: 25px !important;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 35px 0;
+  border-top: 1px solid #ffffff15;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ANIMATIONS */
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .nav-links {
+    position: absolute;
+    top: 85px;
+    left: 0;
+    width: 100%;
+    background: #11110f;
+    flex-direction: column;
+    padding: 30px;
+    gap: 25px;
+    display: none;
+    border-bottom: 1px solid #c9a66b50;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .intro-grid,
+  .booking-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .room-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .features {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 75px 0;
+  }
+
+  .room-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-group.full {
+    grid-column: auto;
+  }
+
+  .booking-form {
+    padding: 22px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 160px 160px;
+  }
+
+  .gallery-item:first-child {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+
+  .intro-image {
+    height: 350px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <a href="#home" class="logo">NO<span>VA</span></a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">
+      ☰
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#booking">Reservations</a></li>
+      <li><a href="#contact" class="gold">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-tag">An experience beyond ordinary</div>
+
+      <h1>Stay in <span>Style.</span></h1>
+
+      <p>
+        Discover comfort, elegance, and unforgettable hospitality.
+        Your next memorable experience begins here.
+      </p>
+
+      <a href="#booking" class="btn">Reserve Your Stay ↗</a>
+
+      <a href="#rooms" class="btn btn-outline" style="margin-left:10px">
+        Explore Rooms
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+  <div class="container intro-grid reveal">
+
+    <div class="intro-image"></div>
+
+    <div class="intro-text">
+      <div class="small-label">Welcome to NOVA</div>
+
+      <h2>Where comfort meets <span class="gold">elegance.</span></h2>
+
+      <p>
+        Step into an atmosphere designed for relaxation, beautiful
+        moments, and exceptional hospitality.
+      </p>
+
+      <p>
+        Whether you are visiting for business, a special occasion,
+        or a peaceful getaway, we aim to make every moment memorable.
+      </p>
+
+      <a href="#booking" class="btn">Discover Your Stay</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ROOMS -->
+
+<section class="section rooms" id="rooms">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <p>Accommodation</p>
+      <h2>Rooms & Suites</h2>
+    </div>
+
+    <div class="room-grid">
+
+      <article class="room-card reveal">
+        <div class="room-image">
+          <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=900&q=85" alt="Standard hotel room">
+        </div>
+        <div class="room-info">
+          <h3>Standard Room</h3>
+          <p>A comfortable and welcoming space for a relaxing stay.</p>
+          <a href="#booking" class="btn btn-outline">Request This Room</a>
+        </div>
+      </article>
+
+      <article class="room-card reveal">
+        <div class="room-image">
+          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=85" alt="Deluxe hotel room">
+        </div>
+        <div class="room-info">
+          <h3>Deluxe Room</h3>
+          <p>Extra comfort and a refined atmosphere for your visit.</p>
+          <a href="#booking" class="btn btn-outline">Request This Room</a>
+        </div>
+      </article>
+
+      <article class="room-card reveal">
+        <div class="room-image">
+          <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=85" alt="Luxury suite">
+        </div>
+        <div class="room-info">
+          <h3>Executive Suite</h3>
+          <p>A spacious experience designed for a special getaway.</p>
+          <a href="#booking" class="btn btn-outline">Request This Room</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <div class="symbol">✦</div>
+        <h3>Comfort</h3>
+        <p>Relax in a welcoming environment.</p>
+      </div>
+
+      <div class="feature">
+        <div class="symbol">♨</div>
+        <h3>Hospitality</h3>
+        <p>Warm service for every guest.</p>
+      </div>
+
+      <div class="feature">
+        <div class="symbol">⌂</div>
+        <h3>Dining</h3>
+        <p>Enjoy memorable food experiences.</p>
+      </div>
+
+      <div class="feature">
+        <div class="symbol">♡</div>
+        <h3>Memories</h3>
+        <p>Make every visit meaningful.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOKING -->
+
+<section class="section booking-section" id="booking">
+  <div class="container booking-grid">
+
+    <div class="booking-copy reveal">
+      <div class="small-label">Your next experience</div>
+
+      <h2>Make your stay <span class="gold">unforgettable.</span></h2>
+
+      <p>
+        Send us your reservation request. Our team can follow up
+        to discuss availability and details.
+      </p>
+    </div>
+
+    <form class="booking-form reveal" id="bookingForm">
+
+      <h3>Reservation Request</h3>
+
+      <div class="form-grid">
+
+        <div class="form-group full">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" placeholder="Your phone number" required>
+        </div>
+
+        <div class="form-group">
+          <label for="roomType">Room Type *</label>
+          <select id="roomType" required>
+            <option value="">Select a room</option>
+            <option>Standard Room</option>
+            <option>Deluxe Room</option>
+            <option>Executive Suite</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="checkin">Check-in Date *</label>
+          <input type="date" id="checkin" required>
+        </div>
+
+        <div class="form-group">
+          <label for="checkout">Check-out Date *</label>
+          <input type="date" id="checkout" required>
+        </div>
+
+        <div class="form-group">
+          <label for="guests">Number of Guests *</label>
+          <select id="guests" required>
+            <option value="">Select guests</option>
+            <option>1 Guest</option>
+            <option>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4 Guests</option>
+            <option>5 Guests</option>
+            <option>6+ Guests</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="roomsCount">Number of Rooms *</label>
+          <select id="roomsCount" required>
+            <option value="">Select rooms</option>
+            <option>1 Room</option>
+            <option>2 Rooms</option>
+            <option>3 Rooms</option>
+            <option>4 Rooms</option>
+            <option>5+ Rooms</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label for="requests">Special Requests</label>
+          <textarea id="requests" placeholder="Tell us anything else we should know..."></textarea>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn">
+        Send Reservation Request ↗
+      </button>
+
+      <p class="form-note">
+        Your request is not a confirmed reservation until availability
+        is verified by the business.
+      </p>
+
+    </form>
+  </div>
+</section>
+
+<!-- GALLERY -->
+
+<section class="section" id="gallery">
+  <div class="container">
+
+    <div class="section-heading reveal">
+      <p>Discover the atmosphere</p>
+      <h2>A Glimpse of NOVA</h2>
+    </div>
+
+    <div class="gallery-grid reveal">
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1100&q=85" alt="Hotel exterior">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=800&q=85" alt="Hotel bedroom">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=85" alt="Restaurant dining">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=85" alt="Restaurant interior">
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=85" alt="Luxury hotel">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="section contact" id="contact">
+  <div class="container reveal">
+
+    <div class="small-label">We're Here to Help</div>
+
+    <h2>Have Any <span class="gold">Questions?</span></h2>
+
+    <p>
+      If you have any questions about our rooms, reservations,
+      prices, or services, feel free to contact us.
+      Our team will be happy to assist you.
+    </p>
+
+    <p class="contact-number">
+      📞 0927954532
+    </p>
+
+    <a href="tel:+251927954532" class="btn">
+      Call Us
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> NOVA. Demo website.</div>
+    <div>Designed with elegance.</div>
+  </div>
+</footer>
+
+<script>
+
+/* MOBILE MENU */
+
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+
+  menuToggle.textContent =
+    navLinks.classList.contains("active") ? "×" : "☰";
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuToggle.textContent = "☰";
+  });
+});
+
+/* FOOTER YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+/* SCROLL ANIMATION */
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
+
+/* BOOKING DATE RULES */
+
+const checkin = document.getElementById("checkin");
+const checkout = document.getElementById("checkout");
+
+const today = new Date();
+
+const localToday = new Date(
+  today.getTime() - today.getTimezoneOffset() * 60000
+).toISOString().split("T")[0];
+
+checkin.min = localToday;
+checkout.min = localToday;
+
+checkin.addEventListener("change", () => {
+  checkout.min = checkin.value;
+
+  if (checkout.value && checkout.value <= checkin.value) {
+    checkout.value = "";
+  }
+});
+
+/* RESERVATION REQUEST */
+
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("fullName").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const room = document.getElementById("roomType").value;
+  const arrival = checkin.value;
+  const departure = checkout.value;
+  const guests = document.getElementById("guests").value;
+  const rooms = document.getElementById("roomsCount").value;
+  const requests = document.getElementById("requests").value.trim();
+
+  if (departure <= arrival) {
+    alert("Please select a check-out date after your check-in date.");
+    return;
+  }
+
+  const message =
+`Hello NOVA, I would like to make a reservation request.
+
+Full Name: ${name}
+Phone Number: ${phone}
+Room Type: ${room}
+Check-in: ${arrival}
+Check-out: ${departure}
+Guests: ${guests}
+Number of Rooms: ${rooms}
+Special Requests: ${requests || "None"}
+
+Please let me know about availability and booking details. Thank you!`;
+
+  /*
+    Replace this placeholder with the actual business WhatsApp number.
+    Use country code and digits only, without + or spaces.
+  */
+
+  const hotelNumber = "2519XXXXXXXX";
+
+  if (hotelNumber.includes("X")) {
+    alert(
+      "Your reservation form is ready. Add the real business WhatsApp number to enable sending."
+    );
+    return;
+  }
+
+  const whatsappURL =
+    "https://wa.me/" + hotelNumber +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(whatsappURL, "_blank");
+});
+
+</script>
+
+</body>
+</html>
